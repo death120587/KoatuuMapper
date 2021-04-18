@@ -8,6 +8,15 @@ namespace KoatuuMapper.DataReaders
 {
     public class XlsxReader
     {
+        /// <summary>
+        /// Reading xlsx file
+        /// </summary>
+        /// <typeparam name="U">Return object type</typeparam>
+        /// <param name="path">Path to a file</param>
+        /// <param name="workSheetName">Name of workSheet</param>
+        /// <param name="startRowIndex">Start row index</param>
+        /// <param name="dataDeserialization">Data pasing method</param>
+        /// <returns>List of objects</returns>
         public List<U> ReadData<U>(string path, string workSheetName, int startRowIndex, Func<ExcelRange, int, U> dataDeserialization) where U : new()
         {
             List<U> data = new List<U>();
